@@ -1,11 +1,12 @@
 package main
 
-const englishPrefix = "Hello, "
-const spanishPrefix = "Hola, "
-const frenchPrefix = "Bonjour, "
-
-const spanish = "Spanish"
-const french = "French"
+const (
+	englishPrefix = "Hello, "
+	spanishPrefix = "Hola, "
+	frenchPrefix  = "Bonjour, "
+	spanish       = "Spanish"
+	french        = "French"
+)
 
 // Public functions start with capital letters, private ones with lowercase
 func Hello(name string, language string) string {
