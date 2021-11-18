@@ -26,6 +26,13 @@ func TestPerimeter(t *testing.T) {
 		checkPerimeter(t, rectangle, want)
 	})
 
+	t.Run("check triangle parameter", func(t *testing.T) {
+		rectangle := Triangle{10.0, 10.0}
+		want := 30.0
+
+		checkPerimeter(t, rectangle, want)
+	})
+
 }
 
 func TestArea(t *testing.T) {
