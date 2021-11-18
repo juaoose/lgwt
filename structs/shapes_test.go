@@ -32,21 +32,18 @@ func TestArea(t *testing.T) {
 
 	// Table driven tests: build a list of test cases that
 	// can be tested in the same manner
-
-	// "Table based tests can be a great item in your toolbox
-	// but be sure that you have a need for the extra noise in
-	// the tests. If you wish to test various implementations
-	// of an interface, or if the data being passed in to a
-	// function has lots of different requirements that need
-	// testing then they are a great fit."
+	// https://github.com/golang/go/wiki/TableDrivenTests
 
 	// This is an anonymous struct that defines the test cases
 	areaTests := []struct {
 		shape Shape
 		want  float64
 	}{
-		{Rectangle{5, 4}, 20.0},
-		{Circle{5}, 78.53981633974483},
+		//Named elements instead of positioinal, for extra
+		// clarity
+		{shape: Rectangle{Width: 5, Height: 4}, want: 20.0},
+		{shape: Circle{Radius: 5}, want: 78.53981633974483},
+		{shape: Triangle{Base: 3, Height: 2}, want: 3.0},
 	}
 
 	for _, tt := range areaTests {
