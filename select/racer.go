@@ -26,6 +26,7 @@ func ConfigurableRacer(a, b string, timeout time.Duration) (winner string, err e
 
 func ping(url string) chan struct{} {
 	// Use make to avoid the zero value
+	// Since you cant do <- nil
 	ch := make(chan struct{})
 	go func() {
 		http.Get(url)
