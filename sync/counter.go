@@ -2,6 +2,8 @@ package counter
 
 import "sync"
 
+// https://github.com/golang/go/wiki/MutexOrChannel
+
 // run `go vet` to chck for suspicious constructs
 type Counter struct {
 	// You could also embed the mutex here, like:
