@@ -10,13 +10,18 @@ type Point struct {
 	Y float64
 }
 
+const (
+	clockCenter      = 150
+	secondHandLength = 90
+)
+
 func SecondHand(t time.Time) Point {
 	p := secondHandPoint(t)
 
 	// hand length is 90
 	// since svg origin is top left
 	// our origin is 150,150
-	p = Point{p.X*90 + 150, -p.Y*90 + 150}
+	p = Point{p.X*secondHandLength + clockCenter, -p.Y*secondHandLength + clockCenter}
 	return p
 }
 
